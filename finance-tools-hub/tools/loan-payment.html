@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Payment Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Find out your monthly loan payments and total interest.">
+    <meta name="description" content="Find out your monthly loan payments, term, or max loan amount.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/loan-payment.html">
     <meta property="og:title" content="Loan Payment Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Find out your monthly loan payments and total interest.">
+    <meta property="og:description" content="Find out your monthly loan payments, term, or max loan amount.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/loan-payment.html">
     <meta name="twitter:card" content="summary_large_image">
@@ -65,12 +65,21 @@
 
             <div class="content">
                 <h1>Loan Payment Calculator</h1>
-                <p>Find out your monthly loan payments and total interest.</p>
+                <p>Find out your monthly loan payments, term, or max loan amount.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-loan" class="form-grid">
                         
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-loan').dispatchEvent(new Event('input'))">
+                    <option value="pmt">Monthly Payment</option>
+                    <option value="amount">Loan Amount</option>
+                    <option value="term">Term (Months)</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Monthly Payment ($)</label><input type="number" id="pmt" value="200"></div>
             <div class="form-group"><label>Loan Amount ($)</label><input type="number" id="amount" value="10000"></div>
             <div class="form-group"><label>Interest Rate (APR %)</label><input type="number" id="apr" value="5"></div>
             <div class="form-group"><label>Term (Months)</label><input type="number" id="term" value="60"></div>
@@ -89,13 +98,13 @@
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
                 <h2>How it works</h2>
-                <p>Calculates the fully amortized monthly payment for a fixed-rate loan.</p>
+                <p>Calculates the fully amortized monthly payment, or reverses the equation to find your max loan amount or required term length.</p>
                 <h3>FAQ</h3>
                 <div itemscope itemtype="https://schema.org/FAQPage">
                   <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                     <h4 itemprop="name">What is Loan Payment Calculator?</h4>
                     <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It is a tool to determine your regular payments to pay off a fixed loan amount over a set time.</p>
+                      <p itemprop="text">It is a dynamic tool to determine your regular payments, how much you can borrow, or how long it will take.</p>
                     </div>
                   </div>
                 </div>

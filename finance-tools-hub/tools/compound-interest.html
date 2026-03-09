@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compound Interest Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Calculate the future value of your savings with this free compound interest calculator.">
+    <meta name="description" content="Calculate any variable of compound interest based on what you have.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/compound-interest.html">
     <meta property="og:title" content="Compound Interest Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Calculate the future value of your savings with this free compound interest calculator.">
+    <meta property="og:description" content="Calculate any variable of compound interest based on what you have.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/compound-interest.html">
     <meta name="twitter:card" content="summary_large_image">
@@ -65,12 +65,22 @@
 
             <div class="content">
                 <h1>Compound Interest Calculator</h1>
-                <p>Calculate the future value of your savings with this free compound interest calculator.</p>
+                <p>Calculate any variable of compound interest based on what you have.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-compound" class="form-grid">
                         
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-compound').dispatchEvent(new Event('input'))">
+                    <option value="fv">Final Balance</option>
+                    <option value="principal">Initial Deposit</option>
+                    <option value="monthly">Monthly Contribution</option>
+                    <option value="time">Time (Years)</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Final Balance ($)</label><input type="number" id="fv" value="50000"></div>
             <div class="form-group"><label>Initial Deposit ($)</label><input type="number" id="principal" value="1000"></div>
             <div class="form-group"><label>Monthly Contribution ($)</label><input type="number" id="monthly" value="100"></div>
             <div class="form-group"><label>Annual Interest Rate (%)</label><input type="number" id="rate" value="5"></div>
@@ -90,13 +100,13 @@
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
                 <h2>How it works</h2>
-                <p>Compound interest is the interest calculated on the initial principal and the accumulated interest from previous periods.</p>
+                <p>Choose the variable you want to solve for, and input the rest. The calculator will automatically determine the missing piece based on standard compounding formulas.</p>
                 <h3>FAQ</h3>
                 <div itemscope itemtype="https://schema.org/FAQPage">
                   <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                     <h4 itemprop="name">What is Compound Interest Calculator?</h4>
                     <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It is interest calculated on both the original principal and accumulated interest.</p>
+                      <p itemprop="text">You can solve for the Final Balance, how much Initial Deposit you need, the required Monthly Contribution, or the Time it will take.</p>
                     </div>
                   </div>
                 </div>

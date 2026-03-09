@@ -137,18 +137,56 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalcExtra({
     id: 'form-loan',
     calculate: (form, resPanel) => {
-      const amount = getValForm(form, 'amount');
-      const apr = getValForm(form, 'apr') / 100;
-      const term = getValForm(form, 'term');
+      const solveFor = form.querySelector('#solve_for').value;
+      const pmtInput = form.querySelector('#pmt');
+      const amtInput = form.querySelector('#amount');
+      const termInput = form.querySelector('#term');
 
-      const r = apr / 12;
-      const pmt = r > 0 ? (amount * r * Math.pow(1 + r, term)) / (Math.pow(1 + r, term) - 1) : (amount / term);
-      const totalPaid = pmt * term;
+      [pmtInput, amtInput, termInput].forEach(el => {
+        el.disabled = false;
+        el.parentElement.style.opacity = '1';
+      });
+
+      let pmt = getValForm(form, 'pmt');
+      let amt = getValForm(form, 'amount');
+      let term = getValForm(form, 'term');
+      let r = getValForm(form, 'apr') / 100 / 12;
+
+      let resultText = '';
+      let secondaryText = '';
+
+      if (solveFor === 'pmt') {
+        pmtInput.disabled = true; pmtInput.parentElement.style.opacity = '0.5';
+        pmt = r > 0 ? (amt * r * Math.pow(1 + r, term)) / (Math.pow(1 + r, term) - 1) : (amt / term);
+        if (!isNaN(pmt) && isFinite(pmt)) pmtInput.value = pmt.toFixed(2);
+        const totalPaid = pmt * term;
+        resultText = `Monthly Payment: ${formatCurrency(pmt)}`;
+        secondaryText = `Total Interest: ${formatCurrency(totalPaid - amt)} | Total Paid: ${formatCurrency(totalPaid)}`;
+      } else if (solveFor === 'amount') {
+        amtInput.disabled = true; amtInput.parentElement.style.opacity = '0.5';
+        amt = r > 0 ? pmt * (1 - Math.pow(1 + r, -term)) / r : pmt * term;
+        if (!isNaN(amt) && isFinite(amt)) amtInput.value = amt.toFixed(2);
+        const totalPaid = pmt * term;
+        resultText = `Max Loan Amount: ${formatCurrency(amt)}`;
+        secondaryText = `Total Interest: ${formatCurrency(totalPaid - amt)}`;
+      } else if (solveFor === 'term') {
+        termInput.disabled = true; termInput.parentElement.style.opacity = '0.5';
+        if (pmt <= amt * r) {
+          resultText = `Payment Too Low`;
+          secondaryText = `Interest exceeds monthly payment`;
+          termInput.value = '';
+        } else {
+          term = r > 0 ? Math.log(pmt / (pmt - amt * r)) / Math.log(1 + r) : amt / pmt;
+          if (!isNaN(term) && isFinite(term)) termInput.value = term.toFixed(0);
+          const totalPaid = pmt * term;
+          resultText = `Term: ${Math.ceil(term)} Months`;
+          secondaryText = `Total Interest Paid: ${formatCurrency(totalPaid - amt)}`;
+        }
+      }
 
       resPanel.innerHTML = `
-        <div class="result-value">Monthly: ${formatCurrency(pmt)}</div>
-        <div class="result-secondary">Total Interest: ${formatCurrency(totalPaid - amount)}</div>
-        <div class="result-secondary">Total Paid: ${formatCurrency(totalPaid)}</div>
+        <div class="result-value" style="font-size: 2rem;">${resultText}</div>
+        <div class="result-secondary">${secondaryText}</div>
       `;
     }
   });
