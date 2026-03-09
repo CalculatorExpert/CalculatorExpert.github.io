@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-  
+
   if (currentTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('sidebar');
   const sidebarToggle = document.getElementById('sidebar-toggle');
   const overlay = document.getElementById('sidebar-overlay');
-  
+
   function toggleSidebar() {
     if (sidebar && overlay) {
       sidebar.classList.toggle('open');
@@ -63,4 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (typeof initAds === 'function') initAds();
     });
   }
+
+  // Set Active Link in Sidebar
+  const currentPath = window.location.pathname;
+  const links = document.querySelectorAll('.sidebar-nav a');
+  links.forEach(link => {
+    // Basic match for static site relative paths
+    if (link.href && link.href !== '' && window.location.href.includes(link.getAttribute('href').replace('./', ''))) {
+      link.classList.add('active');
+    }
+  });
 });
