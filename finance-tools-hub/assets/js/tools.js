@@ -64,27 +64,25 @@ function initCalc(calcConfig) {
 // Individual tools initialization
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Compound Interest
-  initCalc({
+  initCalcExtra({
     id: 'form-compound',
-    calculate: () => {
-      const principal = getVal('principal');
-      const monthly = getVal('monthly');
-      const rateStr = getVal('rate');
-      const years = getVal('years');
+    calculate: (form, resPanel) => {
+      const principal = getValForm(form, 'principal');
+      const monthly = getValForm(form, 'monthly');
+      const rate = getValForm(form, 'rate') / 100;
+      const years = getValForm(form, 'years');
 
-      const rate = rateStr / 100;
       const n = 12; // Monthly compound
       const t = years;
 
       let balance = principal * Math.pow(1 + rate / n, n * t);
-      let futureValSeries = (monthly * (Math.pow(1 + rate / n, n * t) - 1)) / (rate / n);
+      let futureValSeries = rate > 0 ? (monthly * (Math.pow(1 + rate / n, n * t) - 1)) / (rate / n) : (monthly * n * t);
       const totalBalance = balance + futureValSeries;
 
       const totalContr = monthly * 12 * years;
       const interestEarned = totalBalance - principal - totalContr;
 
-      document.getElementById('result-panel').innerHTML = `
+      resPanel.innerHTML = `
         <div class="result-value">${formatCurrency(totalBalance)}</div>
         <div class="result-secondary">Total Contributions: ${formatCurrency(totalContr + principal)}</div>
         <div class="result-secondary">Total Interest: ${formatCurrency(interestEarned)}</div>
