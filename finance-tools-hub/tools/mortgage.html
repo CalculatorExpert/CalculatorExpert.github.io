@@ -7,6 +7,15 @@
     <meta name="description" content="Calculate your monthly mortgage payments with taxes and insurance.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/mortgage.html">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mortgage Calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
 </head>
 <body>
     <div class="app-container">
@@ -15,9 +24,22 @@
             <div class="sidebar-nav">
                 <h3>Calculators</h3>
                 <a href="./compound-interest.html">Compound Interest</a>
-                <a href="./loan-payment.html">Loan Payment</a>
+<a href="./loan-payment.html">Loan Payment</a>
+<a href="./mortgage.html">Mortgage</a>
+<a href="./savings-goal.html">Savings Goal</a>
+<a href="./retirement.html">Retirement Estimator</a>
+<a href="./inflation.html">Inflation</a>
+<a href="./budget-planner.html">Budget Planner</a>
+<a href="./debt-payoff.html">Debt Payoff</a>
+<a href="./break-even.html">Break-even Point</a>
+<a href="./profit-margin.html">Profit Margin</a>
+<a href="./sales-tax.html">Sales Tax / VAT</a>
+<a href="./hourly-rate.html">Hourly Rate</a>
+
             </div>
         </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
         <main class="main-content">
             <header class="header">
@@ -31,12 +53,44 @@
                 <h1>Mortgage Calculator</h1>
                 <p>Calculate your monthly mortgage payments with taxes and insurance.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
-                <div class="calculator-container" style="min-height: 400px; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;">
-                    <p style="text-align:center;">Calculator UI placeholder for Mortgage Calculator.</p>
+                
+                <div class="calculator-container">
+                    <form id="form-mortgage" class="form-grid">
+                        
+            <div class="form-group"><label>Home Price ($)</label><input type="number" id="price" value="300000"></div>
+            <div class="form-group"><label>Down Payment ($)</label><input type="number" id="down" value="60000"></div>
+            <div class="form-group"><label>Interest Rate (APR %)</label><input type="number" id="apr" value="6.5"></div>
+            <div class="form-group"><label>Term (Years)</label><input type="number" id="years" value="30"></div>
+            <div class="form-group"><label>Annual Property Tax ($)</label><input type="number" id="tax" value="3000"></div>
+            <div class="form-group"><label>Annual Insurance ($)</label><input type="number" id="insurance" value="1200"></div>
+        
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary" type="button">Calculate</button>
+                            <button class="btn" type="reset">Reset</button>
+                        </div>
+                    </form>
+
+                    <div class="result-panel" id="result-panel-form-mortgage">
+                        <div class="result-value">-</div>
+                        <div class="result-secondary">Fill details to see results</div>
+                    </div>
+                </div>
+
+                <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
+                <h2>How it works</h2>
+                <p>Determines total monthly obligations including principal, interest, tax, and insurance.</p>
+                <h3>FAQ</h3>
+                <div itemscope itemtype="https://schema.org/FAQPage">
+                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h4 itemprop="name">What is Mortgage Calculator?</h4>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                      <p itemprop="text">It helps estimate the real monthly cost of homeownership beyond just the loan repayment.</p>
+                    </div>
+                  </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a>
+                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
             </footer>
         </main>
     </div>

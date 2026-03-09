@@ -7,6 +7,15 @@
     <meta name="description" content="Calculate the future and past value of money with inflation.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/inflation.html">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Inflation Calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
 </head>
 <body>
     <div class="app-container">
@@ -15,9 +24,22 @@
             <div class="sidebar-nav">
                 <h3>Calculators</h3>
                 <a href="./compound-interest.html">Compound Interest</a>
-                <a href="./loan-payment.html">Loan Payment</a>
+<a href="./loan-payment.html">Loan Payment</a>
+<a href="./mortgage.html">Mortgage</a>
+<a href="./savings-goal.html">Savings Goal</a>
+<a href="./retirement.html">Retirement Estimator</a>
+<a href="./inflation.html">Inflation</a>
+<a href="./budget-planner.html">Budget Planner</a>
+<a href="./debt-payoff.html">Debt Payoff</a>
+<a href="./break-even.html">Break-even Point</a>
+<a href="./profit-margin.html">Profit Margin</a>
+<a href="./sales-tax.html">Sales Tax / VAT</a>
+<a href="./hourly-rate.html">Hourly Rate</a>
+
             </div>
         </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
         <main class="main-content">
             <header class="header">
@@ -31,12 +53,41 @@
                 <h1>Inflation Calculator</h1>
                 <p>Calculate the future and past value of money with inflation.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
-                <div class="calculator-container" style="min-height: 400px; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;">
-                    <p style="text-align:center;">Calculator UI placeholder for Inflation Calculator.</p>
+                
+                <div class="calculator-container">
+                    <form id="form-inflation" class="form-grid">
+                        
+            <div class="form-group"><label>Amount ($)</label><input type="number" id="amount" value="1000"></div>
+            <div class="form-group"><label>Annual Inflation Rate (%)</label><input type="number" id="rate" value="3"></div>
+            <div class="form-group"><label>Years in Future</label><input type="number" id="years" value="10"></div>
+        
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary" type="button">Calculate</button>
+                            <button class="btn" type="reset">Reset</button>
+                        </div>
+                    </form>
+
+                    <div class="result-panel" id="result-panel-form-inflation">
+                        <div class="result-value">-</div>
+                        <div class="result-secondary">Fill details to see results</div>
+                    </div>
+                </div>
+
+                <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
+                <h2>How it works</h2>
+                <p>Applies exponential decay/growth to purchasing power based on the stated inflation rate.</p>
+                <h3>FAQ</h3>
+                <div itemscope itemtype="https://schema.org/FAQPage">
+                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <h4 itemprop="name">What is Inflation Calculator?</h4>
+                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                      <p itemprop="text">It shows how much your current money will be worth in terms of future purchasing power.</p>
+                    </div>
+                  </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a>
+                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
             </footer>
         </main>
     </div>
