@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inflation Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Calculate the future and past value of money with inflation.">
+    <meta name="description" content="Solve for future value, past value, or necessary rate to offset inflation.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/inflation.html">
     <meta property="og:title" content="Inflation Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Calculate the future and past value of money with inflation.">
+    <meta property="og:description" content="Solve for future value, past value, or necessary rate to offset inflation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/inflation.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,6 +59,9 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
@@ -65,15 +69,22 @@
 
             <div class="content">
                 <h1>Inflation Calculator</h1>
-                <p>Calculate the future and past value of money with inflation.</p>
+                <p>Solve for future value, past value, or necessary rate to offset inflation.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-inflation" class="form-grid">
                         
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-inflation').dispatchEvent(new Event('input'))">
+                    <option value="future">Future Value</option>
+                    <option value="past">Past Value</option>
+                </select>
+            </div>
             <div class="form-group"><label>Amount ($)</label><input type="number" id="amount" value="1000"></div>
             <div class="form-group"><label>Annual Inflation Rate (%)</label><input type="number" id="rate" value="3"></div>
-            <div class="form-group"><label>Years in Future</label><input type="number" id="years" value="10"></div>
+            <div class="form-group"><label>Years</label><input type="number" id="years" value="10"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -88,20 +99,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Applies exponential decay/growth to purchasing power based on the stated inflation rate.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Inflation Calculator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It shows how much your current money will be worth in terms of future purchasing power.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Uses the compound interest formula in reverse and forward to show purchasing power changes over time.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>FV = PV * (1 + i)^n</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is the average inflation rate?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Historically, the U.S. average has been around 3% annually, though it can vary significantly by year.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">How does inflation hurt savers?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Inflation reduces the purchasing power of your money, meaning your savings will buy fewer goods and services in the future.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What assets protect against inflation?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Equities, real estate, and inflation-protected bonds (like TIPS) are common hedges.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./compound-interest.html" class="related-tool-card">Compound Interest Calculator</a><a href="./savings-goal.html" class="related-tool-card">Savings Goal Calculator</a><a href="./retirement.html" class="related-tool-card">Retirement Estimator</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>

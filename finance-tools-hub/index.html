@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Tools Hub | Free Financial Calculators</title>
     <meta name="description" content="A collection of free, privacy-first financial calculators for budgeting, investing, and business planning.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/">
+    <link rel="shortcut icon" href="./assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <meta property="og:title" content="Finance Tools Hub | Free Financial Calculators">
+    <meta property="og:description" content="Free, fast, and privacy-first financial calculators for everyone.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2>Finance Hub</h2>
+                <a href="./index.html"><img src="./assets/img/logo.png" alt="Logo" class="header-logo" style="height:24px"></a>
             </div>
             <div class="sidebar-nav">
+                
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
                 
                 <h3>Investing</h3>
@@ -32,69 +36,111 @@
                 <h3>Budgeting</h3>
                 <a href="./tools/budget-planner.html">Budget Planner</a>
 
-                <h3>Business</h3>
+                <h3>Business & Taxes</h3>
                 <a href="./tools/break-even.html">Break-even Point</a>
                 <a href="./tools/profit-margin.html">Profit Margin</a>
                 <a href="./tools/sales-tax.html">Sales Tax / VAT</a>
                 <a href="./tools/hourly-rate.html">Hourly Rate</a>
+
             </div>
         </aside>
-
-        <!-- Overlay for mobile sidebar -->
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-        <!-- Main Content -->
         <main class="main-content">
             <header class="header">
-                <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">☰</button>
+                <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="./index.html"><img src="./assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌓</button>
+                    <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
             </header>
 
-            <div class="content">
-                <h1>Free Financial Calculators</h1>
-                <p>Welcome to Finance Tools Hub! Quick, fast, and privacy-first financial calculators. No sign-up required.</p>
-                
-                <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Smarter Financial Decisions <span class="text-accent">Made Easy</span></h1>
+                    <p>Free, fast, and privacy-first financial calculators. No signups, no data storage, just answers.</p>
+                    <div class="hero-btns">
+                        <a href="#popular-tools" class="btn btn-primary">Start Calculating</a>
+                        <a href="./pages/about.html" class="btn">Our Philosophy</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Geometric shape for aesthetic -->
+                    <div class="hero-blob"></div>
+                </div>
+            </section>
 
-                <div class="tool-grid" style="margin-top: 2rem;">
-                    <a href="./tools/compound-interest.html" class="tool-card">
-                        <h3>Compound Interest</h3>
-                        <p>Calculate long-term growth of your investments.</p>
-                    </a>
-                    <a href="./tools/loan-payment.html" class="tool-card">
-                        <h3>Loan Payment</h3>
-                        <p>Find out your monthly loan payments and total interest.</p>
-                    </a>
-                    <a href="./tools/budget-planner.html" class="tool-card">
-                        <h3>Budget Planner</h3>
-                        <p>50/30/20 rule breakdown of your income.</p>
-                    </a>
+            <div class="content">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h4>Privacy First</h4>
+                        <p>All calculations happen in your browser. Your data never leaves your device.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Lightning Fast</h4>
+                        <p>Optimized static files ensure instant loading and calculations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🆓</div>
+                        <h4>100% Free</h4>
+                        <p>No hidden subcriptions or paywalls. All tools are open for everyone.</p>
+                    </div>
                 </div>
 
-                <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
+                <h2 id="popular-tools">Popular Tools</h2>
+                <div class="tool-grid">
+                    <a href="./tools/compound-interest.html" class="tool-card">
+                        <div class="tool-tag">Investing</div>
+                        <h3>Compound Interest</h3>
+                        <p>Solve for balance, time, or rate.</p>
+                    </a>
+                    <a href="./tools/loan-payment.html" class="tool-card">
+                        <div class="tool-tag">Loans</div>
+                        <h3>Loan Payment</h3>
+                        <p>Calculate payments & amortization.</p>
+                    </a>
+                    <a href="./tools/debt-payoff.html" class="tool-card">
+                        <div class="tool-tag">Debt</div>
+                        <h3>Debt Planner</h3>
+                        <p>Avalanche vs Snowball strategies.</p>
+                    </a>
+                    <a href="./tools/mortgage.html" class="tool-card">
+                        <div class="tool-tag">Home</div>
+                        <h3>Mortgage</h3>
+                        <p>Home price & payment solver.</p>
+                    </a>
+                    <a href="./tools/budget-planner.html" class="tool-card">
+                        <div class="tool-tag">Budget</div>
+                        <h3>50/30/20 Planner</h3>
+                        <p>Quick monthly income splitting.</p>
+                    </a>
+                    <a href="./tools/hourly-rate.html" class="tool-card">
+                        <div class="tool-tag">Business</div>
+                        <h3>Hourly Rate</h3>
+                        <p>Required rate for freelancers.</p>
+                    </a>
+                </div>
             </div>
 
             <footer>
-                <div>
-                    <a href="./pages/about.html">About</a> |
-                    <a href="./pages/privacy.html">Privacy</a> |
+                <div class="footer-links">
+                    <a href="./pages/about.html">About</a> | 
+                    <a href="./pages/privacy.html">Privacy</a> | 
                     <a href="./pages/terms.html">Terms</a> |
                     <a href="./pages/disclaimer.html">Disclaimer</a> |
                     <a href="./pages/contact.html">Contact</a>
                 </div>
-                <p style="margin-top: 1rem; color: var(--muted);">&copy; 2026 Finance Tools Hub. All rights reserved.</p>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>
-
-    <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <span>We use cookies for analytics and ads.</span>
-        <button id="accept-cookies" class="btn btn-primary">Accept</button>
+        <span>We use cookies to ensure you get the best experience on our website.</span>
+        <button id="accept-cookies" class="btn btn-primary">Got it!</button>
     </div>
-
     <script src="./assets/js/site.js"></script>
     <script src="./assets/js/ads.js"></script>
 </body>

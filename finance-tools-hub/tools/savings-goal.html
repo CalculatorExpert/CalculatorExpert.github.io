@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savings Goal Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Calculate how long it will take to reach your savings goal.">
+    <meta name="description" content="Solve for time, contribution, or required initial savings to reach your goal.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/savings-goal.html">
     <meta property="og:title" content="Savings Goal Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Calculate how long it will take to reach your savings goal.">
+    <meta property="og:description" content="Solve for time, contribution, or required initial savings to reach your goal.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/savings-goal.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,6 +59,9 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
@@ -65,16 +69,25 @@
 
             <div class="content">
                 <h1>Savings Goal Calculator</h1>
-                <p>Calculate how long it will take to reach your savings goal.</p>
+                <p>Solve for time, contribution, or required initial savings to reach your goal.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-savings-goal" class="form-grid">
                         
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-savings-goal').dispatchEvent(new Event('input'))">
+                    <option value="time">Time to Reach Goal</option>
+                    <option value="monthly">Monthly Contribution Needed</option>
+                    <option value="initial">Initial Savings Needed</option>
+                </select>
+            </div>
             <div class="form-group"><label>Current Savings ($)</label><input type="number" id="current" value="1000"></div>
             <div class="form-group"><label>Monthly Contribution ($)</label><input type="number" id="monthly" value="200"></div>
             <div class="form-group"><label>Annual Interest Rate (%)</label><input type="number" id="rate" value="4"></div>
             <div class="form-group"><label>Savings Goal ($)</label><input type="number" id="target" value="10000"></div>
+            <div class="form-group"><label>Target Years</label><input type="number" id="years" value="5"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -89,20 +102,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Iteratively compounds interest and adds contributions to find when the balance meets the goal.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Savings Goal Calculator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It factors in compound interest and regular contributions to predict how soon you'll hit your target amount.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Iteratively calculates growth based on interest and contributions, solving for whichever variable you choose.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>FV = PV(1+r)^n + PMT[((1+r)^n - 1)/r]</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">How do I set a realistic savings goal?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Evaluate your income and expenses to see what you can comfortably set aside each month, then use this tool to see how long it takes.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">Should I save or invest for my goal?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Short-term goals (under 3 years) are usually better for high-yield savings. Long-term goals can benefit from market investments.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is the 52-week challenge?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">It's a popular savings method where you save an increasing amount each week, though our tool focuses on consistent monthly contributions.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./compound-interest.html" class="related-tool-card">Compound Interest Calculator</a><a href="./retirement.html" class="related-tool-card">Retirement Estimator</a><a href="./inflation.html" class="related-tool-card">Inflation Calculator</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>

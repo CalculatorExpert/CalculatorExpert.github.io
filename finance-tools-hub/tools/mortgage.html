@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Calculate your monthly mortgage payments with taxes and insurance.">
+    <meta name="description" content="Calculate monthly payments or determine how much home you can afford.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/mortgage.html">
     <meta property="og:title" content="Mortgage Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Calculate your monthly mortgage payments with taxes and insurance.">
+    <meta property="og:description" content="Calculate monthly payments or determine how much home you can afford.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/mortgage.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,6 +59,9 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
@@ -65,18 +69,26 @@
 
             <div class="content">
                 <h1>Mortgage Calculator</h1>
-                <p>Calculate your monthly mortgage payments with taxes and insurance.</p>
+                <p>Calculate monthly payments or determine how much home you can afford.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-mortgage" class="form-grid">
                         
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-mortgage').dispatchEvent(new Event('input'))">
+                    <option value="pmt">Monthly Payment</option>
+                    <option value="price">Home Price (Affordability)</option>
+                </select>
+            </div>
             <div class="form-group"><label>Home Price ($)</label><input type="number" id="price" value="300000"></div>
             <div class="form-group"><label>Down Payment ($)</label><input type="number" id="down" value="60000"></div>
             <div class="form-group"><label>Interest Rate (APR %)</label><input type="number" id="apr" value="6.5"></div>
             <div class="form-group"><label>Term (Years)</label><input type="number" id="years" value="30"></div>
             <div class="form-group"><label>Annual Property Tax ($)</label><input type="number" id="tax" value="3000"></div>
             <div class="form-group"><label>Annual Insurance ($)</label><input type="number" id="insurance" value="1200"></div>
+            <div class="form-group"><label>Target Monthly Payment ($)</label><input type="number" id="target_pmt" value="2000"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -91,20 +103,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Determines total monthly obligations including principal, interest, tax, and insurance.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Mortgage Calculator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It helps estimate the real monthly cost of homeownership beyond just the loan repayment.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Choose between calculating your monthly payment based on a home price, or seeing what price you can afford based on a target monthly payment.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1 ]</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is included in a monthly mortgage payment?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">A standard PITI payment includes Principal, Interest, Taxes, and Insurance.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">How much down payment do I need?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">While 20% is traditional, many loans allow as little as 3% or even 0% for specific programs.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is PMI?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Private Mortgage Insurance is usually required if you have a down payment less than 20% of the home's value.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./loan-payment.html" class="related-tool-card">Loan Payment Calculator</a><a href="./debt-payoff.html" class="related-tool-card">Debt Payoff Planner</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>

@@ -11,6 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/loan-payment.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,6 +59,9 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
@@ -97,20 +101,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Calculates the fully amortized monthly payment, or reverses the equation to find your max loan amount or required term length.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Loan Payment Calculator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It is a dynamic tool to determine your regular payments, how much you can borrow, or how long it will take.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Calculates the fully amortized monthly payment, or reverses the equation to find your max loan amount or required term length.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>PMT = [P * r * (1+r)^n] / [(1+r)^n - 1]</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is an amortization schedule?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">It's a table showing each periodic payment on an amortizing loan, including how much goes to interest and how much to principal.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">How does interest rate affect my payment?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Higher interest rates lead to higher monthly payments and more total interest paid over the life of the loan.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">Can I solve for the loan term?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Yes, our calculator allows you to input your desired payment and see how many months it will take to pay off the loan.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a><a href="./debt-payoff.html" class="related-tool-card">Debt Payoff Planner</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>

@@ -11,6 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/retirement.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,6 +59,9 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
@@ -91,20 +95,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Projects future portfolio size using compound interest, then calculates sustainable safe withdrawals.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Retirement Estimator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">It provides a basic roadmap of your future portfolio value assuming regular investments and steady returns.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Projects future portfolio size using compound interest, then calculates sustainable safe withdrawals.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>Portfolio = Contributions * Compounding + Initial * Compounding</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is the 4% rule?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">It's a rule of thumb suggesting you can safely withdraw 4% of your portfolio in the first year of retirement and adjust for inflation thereafter.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">When should I start saving for retirement?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">The earlier the better! Thanks to compound interest, money invested in your 20s grows significantly more than money invested in your 40s.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">How much do I need to retire?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">A common goal is to have 25 times your annual expenses saved to follow the 4% withdrawal rule.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./compound-interest.html" class="related-tool-card">Compound Interest Calculator</a><a href="./savings-goal.html" class="related-tool-card">Savings Goal Calculator</a><a href="./inflation.html" class="related-tool-card">Inflation Calculator</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>

@@ -36,13 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      const links = document.querySelectorAll('.sidebar-nav a');
-      links.forEach(link => {
-        if (link.textContent.toLowerCase().includes(term)) {
-          link.style.display = 'block';
-        } else {
-          link.style.display = 'none';
+      const sections = document.querySelectorAll('.sidebar-nav h3');
+
+      sections.forEach(header => {
+        let hasVisibleLink = false;
+        let next = header.nextElementSibling;
+
+        while (next && next.tagName === 'A') {
+          const text = next.textContent.toLowerCase();
+          if (text.includes(term)) {
+            next.style.display = 'block';
+            hasVisibleLink = true;
+          } else {
+            next.style.display = 'none';
+          }
+          next = next.nextElementSibling;
         }
+        header.style.display = hasVisibleLink ? 'block' : 'none';
       });
     });
   }
@@ -68,9 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;
   const links = document.querySelectorAll('.sidebar-nav a');
   links.forEach(link => {
-    // Basic match for static site relative paths
-    if (link.href && link.href !== '' && window.location.href.includes(link.getAttribute('href').replace('./', ''))) {
-      link.classList.add('active');
+    const href = link.getAttribute('href');
+    if (href) {
+      const cleanHref = href.replace('./', '').replace('../', '');
+      if (currentPath.endsWith(cleanHref) || (currentPath === '/' && cleanHref === 'index.html')) {
+        link.classList.add('active');
+        // If nested, might need more logic but for this flat structure this works
+      }
     }
   });
 });

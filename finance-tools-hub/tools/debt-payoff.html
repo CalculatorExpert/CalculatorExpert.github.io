@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debt Payoff Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Plan your debt payoff using the snowball or avalanche method.">
+    <title>Debt Payoff Planner | Finance Tools Hub</title>
+    <meta name="description" content="Plan your path to being debt-free with multiple debts support.">
     <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/debt-payoff.html">
-    <meta property="og:title" content="Debt Payoff Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Plan your debt payoff using the snowball or avalanche method.">
+    <meta property="og:title" content="Debt Payoff Planner | Finance Tools Hub">
+    <meta property="og:description" content="Plan your path to being debt-free with multiple debts support.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/debt-payoff.html">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Debt Payoff Calculator",
+      "name": "Debt Payoff Planner",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -58,22 +59,40 @@
         <main class="main-content">
             <header class="header">
                 <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
+                <div class="header-logo-container">
+                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
+                </div>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
             </header>
 
             <div class="content">
-                <h1>Debt Payoff Calculator</h1>
-                <p>Plan your debt payoff using the snowball or avalanche method.</p>
+                <h1>Debt Payoff Planner</h1>
+                <p>Plan your path to being debt-free with multiple debts support.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
                     <form id="form-debt" class="form-grid">
                         
-            <div class="form-group"><label>Total Debt Balance ($)</label><input type="number" id="balance" value="20000"></div>
-            <div class="form-group"><label>Average APR (%)</label><input type="number" id="apr" value="15"></div>
-            <div class="form-group"><label>Monthly Payment ($)</label><input type="number" id="pmt" value="500"></div>
+            <div id="debt-list" style="grid-column: 1 / -1;">
+                <div class="debt-row" style="display:grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <label>Debt Name</label><label>Balance ($)</label><label>APR (%)</label><span></span>
+                    <input type="text" class="debt-name" value="Credit Card">
+                    <input type="number" class="debt-balance" value="5000">
+                    <input type="number" class="debt-apr" value="18">
+                    <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove(); document.getElementById('form-debt').dispatchEvent(new Event('input'))">×</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn-sm" id="add-debt-btn" style="margin-bottom: 1rem;">+ Add Another Debt</button>
+            <div class="form-group"><label>Monthly Budget ($)</label><input type="number" id="budget" value="500"></div>
+            <div class="form-group">
+                <label>Strategy</label>
+                <select id="strategy">
+                    <option value="avalanche">Avalanche (Highest Interest)</option>
+                    <option value="snowball">Snowball (Lowest Balance)</option>
+                </select>
+            </div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -88,20 +107,58 @@
                 </div>
 
                 <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
-                <h2>How it works</h2>
-                <p>Estimates payoff time based on regular monthly payments applied to the principal.</p>
-                <h3>FAQ</h3>
-                <div itemscope itemtype="https://schema.org/FAQPage">
-                  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                    <h4 itemprop="name">What is Debt Payoff Calculator?</h4>
-                    <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                      <p itemprop="text">A simplified tool for understanding debt lifespans.</p>
+                
+                <div class="info-section">
+                    <h2>How it Works</h2>
+                    <p>Rank your debts and apply your extra monthly budget. Avalanche saves the most interest, while Snowball provides psychological wins.</p>
+                </div>
+
+                <div class="info-section">
+                    <h2>Formula</h2>
+                    <div class="formula-container"><code>Payment = Interest + Principal Reduction</code></div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
+                        
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is the Debt Avalanche?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">A strategy where you pay off debts with the highest interest rates first to minimize total interest paid.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">What is the Debt Snowball?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">A strategy where you pay off the smallest balances first to gain momentum and psychological wins.</p>
+            </div>
+        </div>
+        <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <h4 itemprop="name">Should I pay off debt or save?</h4>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Generally, pay off high-interest debt (over 7%) before aggressive saving, but keep a small emergency fund first.</p>
+            </div>
+        </div>
                     </div>
-                  </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Related Tools</h2>
+                    <div class="related-tools-grid">
+                        <a href="./loan-payment.html" class="related-tool-card">Loan Payment Calculator</a><a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a>
+                    </div>
                 </div>
             </div>
             <footer>
-                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a> | <a href="../pages/terms.html">Terms</a>
+                <div class="footer-links">
+                    <a href="../pages/about.html">About</a> | 
+                    <a href="../pages/privacy.html">Privacy</a> | 
+                    <a href="../pages/terms.html">Terms</a> |
+                    <a href="../pages/disclaimer.html">Disclaimer</a> |
+                    <a href="../pages/contact.html">Contact</a>
+                </div>
+                <p>&copy; 2026 Finance Tools Hub. All rights reserved.</p>
             </footer>
         </main>
     </div>
