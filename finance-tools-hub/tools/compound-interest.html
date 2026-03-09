@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator | Finance Tools Hub</title>
+    <meta name="description"
+        content="Calculate the future value of your savings with this free compound interest calculator.">
+    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/compound-interest.html">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Compound Interest Calculator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Menu here (could use a shared layout in framework, but this is static) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2>
+            </div>
+            <div class="sidebar-nav">
+                <h3>Investing</h3>
+                <a href="./compound-interest.html">Compound Interest</a>
+                <a href="./savings-goal.html">Savings Goal</a>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <main class="main-content">
+            <header class="header">
+                <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">🌓</button>
+                </div>
+            </header>
+
+            <div class="content">
+                <h1>Compound Interest Calculator</h1>
+                <p>Find out how your money can grow over time with compound interest.</p>
+
+                <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
+
+                <div class="calculator-container">
+                    <form id="form-compound" class="form-grid">
+                        <div class="form-group">
+                            <label for="principal">Initial Deposit ($)</label>
+                            <input type="number" id="principal" value="1000" min="0" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="monthly">Monthly Contribution ($)</label>
+                            <input type="number" id="monthly" value="100" min="0" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="rate">Annual Interest Rate (%)</label>
+                            <input type="number" id="rate" value="5" min="0" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="years">Years to Grow</label>
+                            <input type="number" id="years" value="10" min="1" step="1">
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary" type="button">Calculate</button>
+                            <button class="btn" type="reset">Reset</button>
+                        </div>
+                    </form>
+
+                    <div class="result-panel" id="result-panel">
+                        <div class="result-value">-</div>
+                        <div class="result-secondary">Fill details to see results</div>
+                    </div>
+                </div>
+
+                <div class="ad-slot" data-ad-slot="IN_CONTENT"></div>
+
+                <h2>How it works</h2>
+                <p>Compound interest is the interest calculated on the initial principal and the accumulated interest
+                    from previous periods.</p>
+
+                <h3>FAQ</h3>
+                <div itemscope itemtype="https://schema.org/FAQPage">
+                    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <h4 itemprop="name">What is compound interest?</h4>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <p itemprop="text">It is interest calculated on both the original principal and accumulated
+                                interest.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+                <a href="../pages/about.html">About</a> | <a href="../pages/privacy.html">Privacy</a>
+            </footer>
+        </main>
+    </div>
+
+    <script src="../assets/js/site.js"></script>
+    <script src="../assets/js/tools.js"></script>
+    <script src="../assets/js/ads.js"></script>
+</body>
+
+</html>
