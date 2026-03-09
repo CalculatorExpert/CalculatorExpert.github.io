@@ -200,23 +200,24 @@ p {
 .header-logo-container {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 1rem;
 }
 
 .header-logo {
-    height: 32px;
+    height: 35.2px;
     width: auto;
     object-fit: contain;
 }
 
 @media (max-width: 768px) {
     .header-logo-container {
-        justify-content: flex-end;
-        padding-right: 1rem;
+        justify-content: flex-start;
+        padding-left: 1rem;
     }
 
     .header-logo {
-        height: 24px;
+        height: 26.4px;
     }
 }
 
