@@ -9,16 +9,45 @@
 </head>
 <body>
     <div class="app-container">
-        <main class="main-content" style="margin-left:0; width:100%">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="sidebar-logo"></a>
+            </div>
+            <div class="sidebar-nav">
+                
+                <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
+                
+                <h3>Investing</h3>
+                <a href="../tools/compound-interest.html">Compound Interest</a>
+                <a href="../tools/savings-goal.html">Savings Goal</a>
+                <a href="../tools/retirement.html">Retirement Estimator</a>
+                <a href="../tools/inflation.html">Inflation</a>
+
+                <h3>Loans & Debt</h3>
+                <a href="../tools/loan-payment.html">Loan Payment</a>
+                <a href="../tools/mortgage.html">Mortgage</a>
+                <a href="../tools/debt-payoff.html">Debt Payoff</a>
+
+                <h3>Budgeting</h3>
+                <a href="../tools/budget-planner.html">Budget Planner</a>
+
+                <h3>Business & Taxes</h3>
+                <a href="../tools/break-even.html">Break-even Point</a>
+                <a href="../tools/profit-margin.html">Profit Margin</a>
+                <a href="../tools/sales-tax.html">Sales Tax / VAT</a>
+                <a href="../tools/hourly-rate.html">Hourly Rate</a>
+
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <main class="main-content">
             <header class="header">
-                <div class="header-logo-container" style="justify-content: flex-start;">
-                    <a href="../index.html"><img src="../assets/img/logo.png" alt="Logo" class="header-logo"></a>
-                </div>
+                <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
                 <div class="header-actions">
                     <button class="theme-toggle" id="theme-toggle">&#127183;</button>
                 </div>
             </header>
-            <div class="content legal-content" style="max-width:800px; margin: 0 auto; padding: 4rem 2rem;">
+            <div class="content legal-content">
                 <h1>Financial Disclaimer</h1>
                 <div class="content-body"><p><b>Not Financial Advice:</b> All figures provided by our calculators are estimates. Consult a real financial advisor before making any decisions.</p></div>
                 <div style="margin-top: 3rem;">
