@@ -200,15 +200,14 @@ p {
 .header-logo-container {
     display: flex;
     align-items: center;
-    padding-left: 2px;
+    padding-left: 0;
 }
 
 .header-logo {
-    height: 60px;
+    height: 32px;
     width: auto;
     object-fit: contain;
     display: block;
-    margin: 2px 0;
 }
 
 @media (max-width: 768px) {
@@ -217,7 +216,7 @@ p {
     }
 
     .header-logo {
-        height: 60px;
+        height: 32px;
     }
 }
 
