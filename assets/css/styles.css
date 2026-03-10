@@ -84,11 +84,13 @@ a {
     align-items: center;
     border-bottom: 1px solid var(--border);
     margin-bottom: 0.5rem;
+    overflow: hidden;
 }
 
 .sidebar-logo {
-    height: 32px;
-    width: auto;
+    max-width: 180px;
+    height: auto;
+    max-height: 40px;
     object-fit: contain;
     display: block;
 }
