@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Planner | Finance Tools Hub</title>
-    <meta name="description" content="Plan your budget using the 50/30/20 rule.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/budget-planner.html">
-    <meta property="og:title" content="Budget Planner | Finance Tools Hub">
-    <meta property="og:description" content="Plan your budget using the 50/30/20 rule.">
+    <title>Profit Margin Calculator | Finance Tools Hub</title>
+    <meta name="description" content="Calculate gross and net profit margins.">
+    <link rel="canonical" href="https://calculatorexpert.github.io/tools/profit-margin.html">
+    <meta property="og:title" content="Profit Margin Calculator | Finance Tools Hub">
+    <meta property="og:description" content="Calculate gross and net profit margins.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/budget-planner.html">
+    <meta property="og:url" content="https://calculatorexpert.github.io/tools/profit-margin.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -17,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Budget Planner",
+      "name": "Profit Margin Calculator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2></div>
+            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance CalculatorExpert</a></h2></div>
             <div class="sidebar-nav">
                 
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
@@ -68,14 +68,16 @@
             </header>
 
             <div class="content">
-                <h1>Budget Planner</h1>
-                <p>Plan your budget using the 50/30/20 rule.</p>
+                <h1>Profit Margin Calculator</h1>
+                <p>Calculate gross and net profit margins.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
-                    <form id="form-budget" class="form-grid">
+                    <form id="form-profit" class="form-grid">
                         
-            <div class="form-group"><label>Monthly Net Income ($)</label><input type="number" id="income" value="4000"></div>
+            <div class="form-group"><label>Total Revenue ($)</label><input type="number" id="revenue" value="10000"></div>
+            <div class="form-group"><label>Cost of Goods Sold (COGS) ($)</label><input type="number" id="cogs" value="4000"></div>
+            <div class="form-group"><label>Other Expenses ($)</label><input type="number" id="expenses" value="2000"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -83,7 +85,7 @@
                         </div>
                     </form>
 
-                    <div class="result-panel" id="result-panel-form-budget">
+                    <div class="result-panel" id="result-panel-form-profit">
                         <div class="result-value">-</div>
                         <div class="result-secondary">Fill details to see results</div>
                     </div>
@@ -93,12 +95,12 @@
                 
                 <div class="info-section">
                     <h2>How it Works</h2>
-                    <p>Splits take-home pay into Needs (50%), Wants (30%), and Savings/Debt (20%).</p>
+                    <p>Calculates Gross Profit (Revenue - COGS) and Net Profit (Gross - Expenses), displayed as percentages.</p>
                 </div>
 
                 <div class="info-section">
                     <h2>Formula</h2>
-                    <div class="formula-container"><code>Needs(50%), Wants(30%), Savings(20%)</code></div>
+                    <div class="formula-container"><code>Margin = (Revenue - Expenses) / Revenue</code></div>
                 </div>
 
                 <div class="info-section">
@@ -106,21 +108,21 @@
                     <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
                         
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What counts as a 'Need'?</h4>
+            <h4 itemprop="name">What is a good profit margin?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Housing, utilities, groceries, transportation, and minimum debt payments.</p>
+                <p itemprop="text">It varies by industry, but a net margin of 10% is considered average, while 20% is high.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What counts as a 'Want'?</h4>
+            <h4 itemprop="name">What is Gross Margin?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Dining out, entertainment, hobbies, and non-essential travel.</p>
+                <p itemprop="text">The percentage of revenue exceeding the Cost of Goods Sold.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What if my needs are more than 50%?</h4>
+            <h4 itemprop="name">How is Net Margin different?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">You may need to reduce wants or search for ways to lower fix costs like housing or insurance.</p>
+                <p itemprop="text">Net Margin subtracts all expenses, including taxes and operating costs, not just production costs.</p>
             </div>
         </div>
                     </div>
@@ -129,7 +131,7 @@
                 <div class="info-section">
                     <h2>Related Tools</h2>
                     <div class="related-tools-grid">
-                        <a href="./compound-interest.html" class="related-tool-card">Compound Interest Calculator</a><a href="./loan-payment.html" class="related-tool-card">Loan Payment Calculator</a><a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a>
+                        <a href="./break-even.html" class="related-tool-card">Break-even Point Calculator</a><a href="./sales-tax.html" class="related-tool-card">Sales Tax / VAT Calculator</a><a href="./hourly-rate.html" class="related-tool-card">Hourly Rate Calculator</a>
                     </div>
                 </div>
             </div>

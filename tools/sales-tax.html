@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debt Payoff Planner | Finance Tools Hub</title>
-    <meta name="description" content="Plan your path to being debt-free with multiple debts support.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/debt-payoff.html">
-    <meta property="og:title" content="Debt Payoff Planner | Finance Tools Hub">
-    <meta property="og:description" content="Plan your path to being debt-free with multiple debts support.">
+    <title>Sales Tax / VAT Calculator | Finance Tools Hub</title>
+    <meta name="description" content="Calculate sales tax or VAT quickly.">
+    <link rel="canonical" href="https://calculatorexpert.github.io/tools/sales-tax.html">
+    <meta property="og:title" content="Sales Tax / VAT Calculator | Finance Tools Hub">
+    <meta property="og:description" content="Calculate sales tax or VAT quickly.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/debt-payoff.html">
+    <meta property="og:url" content="https://calculatorexpert.github.io/tools/sales-tax.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -17,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Debt Payoff Planner",
+      "name": "Sales Tax / VAT Calculator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2></div>
+            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance CalculatorExpert</a></h2></div>
             <div class="sidebar-nav">
                 
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
@@ -68,29 +68,20 @@
             </header>
 
             <div class="content">
-                <h1>Debt Payoff Planner</h1>
-                <p>Plan your path to being debt-free with multiple debts support.</p>
+                <h1>Sales Tax / VAT Calculator</h1>
+                <p>Calculate sales tax or VAT quickly.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
-                    <form id="form-debt" class="form-grid">
+                    <form id="form-sales-tax" class="form-grid">
                         
-            <div id="debt-list" style="grid-column: 1 / -1;">
-                <div class="debt-row" style="display:grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
-                    <label>Debt Name</label><label>Balance ($)</label><label>APR (%)</label><span></span>
-                    <input type="text" class="debt-name" value="Credit Card">
-                    <input type="number" class="debt-balance" value="5000">
-                    <input type="number" class="debt-apr" value="18">
-                    <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove(); document.getElementById('form-debt').dispatchEvent(new Event('input'))">×</button>
-                </div>
-            </div>
-            <button type="button" class="btn btn-sm" id="add-debt-btn" style="margin-bottom: 1rem;">+ Add Another Debt</button>
-            <div class="form-group"><label>Monthly Budget ($)</label><input type="number" id="budget" value="500"></div>
+            <div class="form-group"><label>Price ($)</label><input type="number" id="price" value="100"></div>
+            <div class="form-group"><label>Tax Rate (%)</label><input type="number" id="tax" value="8"></div>
             <div class="form-group">
-                <label>Strategy</label>
-                <select id="strategy">
-                    <option value="avalanche">Avalanche (Highest Interest)</option>
-                    <option value="snowball">Snowball (Lowest Balance)</option>
+                <label>Mode</label>
+                <select id="mode">
+                    <option value="add">Add Tax (Price is Net)</option>
+                    <option value="extract">Extract Tax (Price is Gross)</option>
                 </select>
             </div>
         
@@ -100,7 +91,7 @@
                         </div>
                     </form>
 
-                    <div class="result-panel" id="result-panel-form-debt">
+                    <div class="result-panel" id="result-panel-form-sales-tax">
                         <div class="result-value">-</div>
                         <div class="result-secondary">Fill details to see results</div>
                     </div>
@@ -110,12 +101,12 @@
                 
                 <div class="info-section">
                     <h2>How it Works</h2>
-                    <p>Rank your debts and apply your extra monthly budget. Avalanche saves the most interest, while Snowball provides psychological wins.</p>
+                    <p>Either adds a percentage to the base price, or mathematically extracts embedded tax from a final price.</p>
                 </div>
 
                 <div class="info-section">
                     <h2>Formula</h2>
-                    <div class="formula-container"><code>Payment = Interest + Principal Reduction</code></div>
+                    <div class="formula-container"><code>Total = Price * (1 + TaxRate)</code></div>
                 </div>
 
                 <div class="info-section">
@@ -123,21 +114,21 @@
                     <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
                         
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What is the Debt Avalanche?</h4>
+            <h4 itemprop="name">How do I extract tax from a total?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">A strategy where you pay off debts with the highest interest rates first to minimize total interest paid.</p>
+                <p itemprop="text">Divide the total by (1 + TaxRate). For example, at 10% tax, divide by 1.10.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What is the Debt Snowball?</h4>
+            <h4 itemprop="name">What is VAT?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">A strategy where you pay off the smallest balances first to gain momentum and psychological wins.</p>
+                <p itemprop="text">Value Added Tax is a consumption tax placed on a product whenever value is added at each stage of the supply chain.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">Should I pay off debt or save?</h4>
+            <h4 itemprop="name">Is sales tax the same everywhere?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Generally, pay off high-interest debt (over 7%) before aggressive saving, but keep a small emergency fund first.</p>
+                <p itemprop="text">No, it varies significantly by state, city, and country.</p>
             </div>
         </div>
                     </div>
@@ -146,7 +137,7 @@
                 <div class="info-section">
                     <h2>Related Tools</h2>
                     <div class="related-tools-grid">
-                        <a href="./loan-payment.html" class="related-tool-card">Loan Payment Calculator</a><a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a>
+                        <a href="./break-even.html" class="related-tool-card">Break-even Point Calculator</a><a href="./profit-margin.html" class="related-tool-card">Profit Margin Calculator</a><a href="./hourly-rate.html" class="related-tool-card">Hourly Rate Calculator</a>
                     </div>
                 </div>
             </div>

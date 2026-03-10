@@ -177,7 +177,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 1rem;
     position: sticky;
     top: 0;
     z-index: 900;
@@ -198,26 +198,26 @@ p {
 }
 
 .header-logo-container {
-    flex: 1;
     display: flex;
-    justify-content: flex-start;
-    padding-left: 1rem;
+    align-items: center;
+    padding-left: 2px;
 }
 
 .header-logo {
-    height: 35.2px;
+    height: 60px;
     width: auto;
     object-fit: contain;
+    display: block;
+    margin: 2px 0;
 }
 
 @media (max-width: 768px) {
     .header-logo-container {
-        justify-content: flex-start;
-        padding-left: 1rem;
+        padding-left: 2px;
     }
 
     .header-logo {
-        height: 26.4px;
+        height: 60px;
     }
 }
 

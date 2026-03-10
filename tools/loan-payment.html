@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hourly Rate Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Determine required rate or target income for your freelance business.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/hourly-rate.html">
-    <meta property="og:title" content="Hourly Rate Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Determine required rate or target income for your freelance business.">
+    <title>Loan Payment Calculator | Finance Tools Hub</title>
+    <meta name="description" content="Find out your monthly loan payments, term, or max loan amount.">
+    <link rel="canonical" href="https://calculatorexpert.github.io/tools/loan-payment.html">
+    <meta property="og:title" content="Loan Payment Calculator | Finance Tools Hub">
+    <meta property="og:description" content="Find out your monthly loan payments, term, or max loan amount.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/hourly-rate.html">
+    <meta property="og:url" content="https://calculatorexpert.github.io/tools/loan-payment.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -17,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Hourly Rate Calculator",
+      "name": "Loan Payment Calculator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2></div>
+            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance CalculatorExpert</a></h2></div>
             <div class="sidebar-nav">
                 
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
@@ -68,26 +68,25 @@
             </header>
 
             <div class="content">
-                <h1>Hourly Rate Calculator</h1>
-                <p>Determine required rate or target income for your freelance business.</p>
+                <h1>Loan Payment Calculator</h1>
+                <p>Find out your monthly loan payments, term, or max loan amount.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
-                    <form id="form-hourly" class="form-grid">
+                    <form id="form-loan" class="form-grid">
                         
             <div class="form-group full-width">
                 <label>Solve For</label>
-                <select id="solve_for" onchange="document.getElementById('form-hourly').dispatchEvent(new Event('input'))">
-                    <option value="rate">Required Hourly Rate</option>
-                    <option value="income">Estimated Annual Income</option>
+                <select id="solve_for" onchange="document.getElementById('form-loan').dispatchEvent(new Event('input'))">
+                    <option value="pmt">Monthly Payment</option>
+                    <option value="amount">Loan Amount</option>
+                    <option value="term">Term (Months)</option>
                 </select>
             </div>
-            <div class="form-group"><label>Desired Annual Income ($)</label><input type="number" id="income" value="80000"></div>
-            <div class="form-group"><label>Hourly Rate ($)</label><input type="number" id="rate" value="50"></div>
-            <div class="form-group"><label>Annual Business Expenses ($)</label><input type="number" id="expenses" value="10000"></div>
-            <div class="form-group"><label>Billable Hours Per Week</label><input type="number" id="hours" value="25"></div>
-            <div class="form-group"><label>Weeks Worked Per Year</label><input type="number" id="weeks" value="48"></div>
-            <div class="form-group"><label>Tax & Savings Buffer (%)</label><input type="number" id="buffer" value="30"></div>
+            <div class="form-group"><label>Monthly Payment ($)</label><input type="number" id="pmt" value="200"></div>
+            <div class="form-group"><label>Loan Amount ($)</label><input type="number" id="amount" value="10000"></div>
+            <div class="form-group"><label>Interest Rate (APR %)</label><input type="number" id="apr" value="5"></div>
+            <div class="form-group"><label>Term (Months)</label><input type="number" id="term" value="60"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -95,7 +94,7 @@
                         </div>
                     </form>
 
-                    <div class="result-panel" id="result-panel-form-hourly">
+                    <div class="result-panel" id="result-panel-form-loan">
                         <div class="result-value">-</div>
                         <div class="result-secondary">Fill details to see results</div>
                     </div>
@@ -105,12 +104,12 @@
                 
                 <div class="info-section">
                     <h2>How it Works</h2>
-                    <p>Adjust your hours, expenses, and desired profit to see what you need to charge, or see what your current rate earns you after taxes and costs.</p>
+                    <p>Calculates the fully amortized monthly payment, or reverses the equation to find your max loan amount or required term length.</p>
                 </div>
 
                 <div class="info-section">
                     <h2>Formula</h2>
-                    <div class="formula-container"><code>Rate = (Income + Expenses) / billable_hours</code></div>
+                    <div class="formula-container"><code>PMT = [P * r * (1+r)^n] / [(1+r)^n - 1]</code></div>
                 </div>
 
                 <div class="info-section">
@@ -118,21 +117,21 @@
                     <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
                         
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">How many billable hours are in a week?</h4>
+            <h4 itemprop="name">What is an amortization schedule?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Most freelancers find 20-30 hours billable, with the rest spent on admin and marketing.</p>
+                <p itemprop="text">It's a table showing each periodic payment on an amortizing loan, including how much goes to interest and how much to principal.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">Should I include taxes in my rate?</h4>
+            <h4 itemprop="name">How does interest rate affect my payment?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Yes! Freelancers must pay both portions of FICA taxes, so add a 25-30% buffer for taxes.</p>
+                <p itemprop="text">Higher interest rates lead to higher monthly payments and more total interest paid over the life of the loan.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">How do I account for time off?</h4>
+            <h4 itemprop="name">Can I solve for the loan term?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Calculate your hourly rate based on 48 weeks instead of 52 to allow for vacation and sick days.</p>
+                <p itemprop="text">Yes, our calculator allows you to input your desired payment and see how many months it will take to pay off the loan.</p>
             </div>
         </div>
                     </div>
@@ -141,7 +140,7 @@
                 <div class="info-section">
                     <h2>Related Tools</h2>
                     <div class="related-tools-grid">
-                        <a href="./break-even.html" class="related-tool-card">Break-even Point Calculator</a><a href="./profit-margin.html" class="related-tool-card">Profit Margin Calculator</a><a href="./sales-tax.html" class="related-tool-card">Sales Tax / VAT Calculator</a>
+                        <a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a><a href="./debt-payoff.html" class="related-tool-card">Debt Payoff Planner</a>
                     </div>
                 </div>
             </div>

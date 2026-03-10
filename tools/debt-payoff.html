@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inflation Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Solve for future value, past value, or necessary rate to offset inflation.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/inflation.html">
-    <meta property="og:title" content="Inflation Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Solve for future value, past value, or necessary rate to offset inflation.">
+    <title>Debt Payoff Planner | Finance Tools Hub</title>
+    <meta name="description" content="Plan your path to being debt-free with multiple debts support.">
+    <link rel="canonical" href="https://calculatorexpert.github.io/tools/debt-payoff.html">
+    <meta property="og:title" content="Debt Payoff Planner | Finance Tools Hub">
+    <meta property="og:description" content="Plan your path to being debt-free with multiple debts support.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/inflation.html">
+    <meta property="og:url" content="https://calculatorexpert.github.io/tools/debt-payoff.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -17,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Inflation Calculator",
+      "name": "Debt Payoff Planner",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2></div>
+            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance CalculatorExpert</a></h2></div>
             <div class="sidebar-nav">
                 
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
@@ -68,23 +68,31 @@
             </header>
 
             <div class="content">
-                <h1>Inflation Calculator</h1>
-                <p>Solve for future value, past value, or necessary rate to offset inflation.</p>
+                <h1>Debt Payoff Planner</h1>
+                <p>Plan your path to being debt-free with multiple debts support.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
-                    <form id="form-inflation" class="form-grid">
+                    <form id="form-debt" class="form-grid">
                         
-            <div class="form-group full-width">
-                <label>Solve For</label>
-                <select id="solve_for" onchange="document.getElementById('form-inflation').dispatchEvent(new Event('input'))">
-                    <option value="future">Future Value</option>
-                    <option value="past">Past Value</option>
+            <div id="debt-list" style="grid-column: 1 / -1;">
+                <div class="debt-row" style="display:grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <label>Debt Name</label><label>Balance ($)</label><label>APR (%)</label><span></span>
+                    <input type="text" class="debt-name" value="Credit Card">
+                    <input type="number" class="debt-balance" value="5000">
+                    <input type="number" class="debt-apr" value="18">
+                    <button type="button" class="btn btn-sm btn-danger" onclick="this.parentElement.remove(); document.getElementById('form-debt').dispatchEvent(new Event('input'))">×</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn-sm" id="add-debt-btn" style="margin-bottom: 1rem;">+ Add Another Debt</button>
+            <div class="form-group"><label>Monthly Budget ($)</label><input type="number" id="budget" value="500"></div>
+            <div class="form-group">
+                <label>Strategy</label>
+                <select id="strategy">
+                    <option value="avalanche">Avalanche (Highest Interest)</option>
+                    <option value="snowball">Snowball (Lowest Balance)</option>
                 </select>
             </div>
-            <div class="form-group"><label>Amount ($)</label><input type="number" id="amount" value="1000"></div>
-            <div class="form-group"><label>Annual Inflation Rate (%)</label><input type="number" id="rate" value="3"></div>
-            <div class="form-group"><label>Years</label><input type="number" id="years" value="10"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -92,7 +100,7 @@
                         </div>
                     </form>
 
-                    <div class="result-panel" id="result-panel-form-inflation">
+                    <div class="result-panel" id="result-panel-form-debt">
                         <div class="result-value">-</div>
                         <div class="result-secondary">Fill details to see results</div>
                     </div>
@@ -102,12 +110,12 @@
                 
                 <div class="info-section">
                     <h2>How it Works</h2>
-                    <p>Uses the compound interest formula in reverse and forward to show purchasing power changes over time.</p>
+                    <p>Rank your debts and apply your extra monthly budget. Avalanche saves the most interest, while Snowball provides psychological wins.</p>
                 </div>
 
                 <div class="info-section">
                     <h2>Formula</h2>
-                    <div class="formula-container"><code>FV = PV * (1 + i)^n</code></div>
+                    <div class="formula-container"><code>Payment = Interest + Principal Reduction</code></div>
                 </div>
 
                 <div class="info-section">
@@ -115,21 +123,21 @@
                     <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
                         
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What is the average inflation rate?</h4>
+            <h4 itemprop="name">What is the Debt Avalanche?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Historically, the U.S. average has been around 3% annually, though it can vary significantly by year.</p>
+                <p itemprop="text">A strategy where you pay off debts with the highest interest rates first to minimize total interest paid.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">How does inflation hurt savers?</h4>
+            <h4 itemprop="name">What is the Debt Snowball?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Inflation reduces the purchasing power of your money, meaning your savings will buy fewer goods and services in the future.</p>
+                <p itemprop="text">A strategy where you pay off the smallest balances first to gain momentum and psychological wins.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What assets protect against inflation?</h4>
+            <h4 itemprop="name">Should I pay off debt or save?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Equities, real estate, and inflation-protected bonds (like TIPS) are common hedges.</p>
+                <p itemprop="text">Generally, pay off high-interest debt (over 7%) before aggressive saving, but keep a small emergency fund first.</p>
             </div>
         </div>
                     </div>
@@ -138,7 +146,7 @@
                 <div class="info-section">
                     <h2>Related Tools</h2>
                     <div class="related-tools-grid">
-                        <a href="./compound-interest.html" class="related-tool-card">Compound Interest Calculator</a><a href="./savings-goal.html" class="related-tool-card">Savings Goal Calculator</a><a href="./retirement.html" class="related-tool-card">Retirement Estimator</a>
+                        <a href="./loan-payment.html" class="related-tool-card">Loan Payment Calculator</a><a href="./mortgage.html" class="related-tool-card">Mortgage Calculator</a>
                     </div>
                 </div>
             </div>

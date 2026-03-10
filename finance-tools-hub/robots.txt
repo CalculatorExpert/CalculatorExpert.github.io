@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://yourdomain.github.io/finance-tools-hub/sitemap.xml

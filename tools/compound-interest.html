@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Break-even Point Calculator | Finance Tools Hub</title>
-    <meta name="description" content="Calculate the break-even point for your business.">
-    <link rel="canonical" href="https://yourdomain.github.io/finance-tools-hub/tools/break-even.html">
-    <meta property="og:title" content="Break-even Point Calculator | Finance Tools Hub">
-    <meta property="og:description" content="Calculate the break-even point for your business.">
+    <title>Compound Interest Calculator | Finance Tools Hub</title>
+    <meta name="description" content="Calculate any variable of compound interest based on what you have.">
+    <link rel="canonical" href="https://calculatorexpert.github.io/tools/compound-interest.html">
+    <meta property="og:title" content="Compound Interest Calculator | Finance Tools Hub">
+    <meta property="og:description" content="Calculate any variable of compound interest based on what you have.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.github.io/finance-tools-hub/tools/break-even.html">
+    <meta property="og:url" content="https://calculatorexpert.github.io/tools/compound-interest.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="../assets/img/Favicon.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -17,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Break-even Point Calculator",
+      "name": "Compound Interest Calculator",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
@@ -26,7 +26,7 @@
 <body>
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance Hub</a></h2></div>
+            <div class="sidebar-header"><h2><a href="../index.html" style="color:var(--text)">Finance CalculatorExpert</a></h2></div>
             <div class="sidebar-nav">
                 
                 <input type="text" id="sidebar-search" class="search-filter" placeholder="Search tools..." aria-label="Search tools">
@@ -68,16 +68,27 @@
             </header>
 
             <div class="content">
-                <h1>Break-even Point Calculator</h1>
-                <p>Calculate the break-even point for your business.</p>
+                <h1>Compound Interest Calculator</h1>
+                <p>Calculate any variable of compound interest based on what you have.</p>
                 <div class="ad-slot" data-ad-slot="TOP_LEADERBOARD"></div>
                 
                 <div class="calculator-container">
-                    <form id="form-breakeven" class="form-grid">
+                    <form id="form-compound" class="form-grid">
                         
-            <div class="form-group"><label>Fixed Costs ($)</label><input type="number" id="fixed" value="5000"></div>
-            <div class="form-group"><label>Price Per Unit ($)</label><input type="number" id="price" value="50"></div>
-            <div class="form-group"><label>Variable Cost Per Unit ($)</label><input type="number" id="var_cost" value="30"></div>
+            <div class="form-group full-width">
+                <label>Solve For</label>
+                <select id="solve_for" onchange="document.getElementById('form-compound').dispatchEvent(new Event('input'))">
+                    <option value="fv">Final Balance</option>
+                    <option value="principal">Initial Deposit</option>
+                    <option value="monthly">Monthly Contribution</option>
+                    <option value="time">Time (Years)</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Final Balance ($)</label><input type="number" id="fv" value="50000"></div>
+            <div class="form-group"><label>Initial Deposit ($)</label><input type="number" id="principal" value="1000"></div>
+            <div class="form-group"><label>Monthly Contribution ($)</label><input type="number" id="monthly" value="100"></div>
+            <div class="form-group"><label>Annual Interest Rate (%)</label><input type="number" id="rate" value="5"></div>
+            <div class="form-group"><label>Years to Grow</label><input type="number" id="years" value="10"></div>
         
                         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                             <button class="btn btn-primary" type="button">Calculate</button>
@@ -85,7 +96,7 @@
                         </div>
                     </form>
 
-                    <div class="result-panel" id="result-panel-form-breakeven">
+                    <div class="result-panel" id="result-panel-form-compound">
                         <div class="result-value">-</div>
                         <div class="result-secondary">Fill details to see results</div>
                     </div>
@@ -95,12 +106,12 @@
                 
                 <div class="info-section">
                     <h2>How it Works</h2>
-                    <p>Divides fixed costs by the contribution margin (price minus variable cost).</p>
+                    <p>Choose the variable you want to solve for, and input the rest. The calculator will automatically determine the missing piece based on standard compounding formulas.</p>
                 </div>
 
                 <div class="info-section">
                     <h2>Formula</h2>
-                    <div class="formula-container"><code>Units = Fixed Costs / (Price - Variable Cost)</code></div>
+                    <div class="formula-container"><code>A = P(1 + r/n)^(nt)</code></div>
                 </div>
 
                 <div class="info-section">
@@ -108,21 +119,21 @@
                     <div itemscope itemtype="https://schema.org/FAQPage" class="faq-container">
                         
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What are fixed costs?</h4>
+            <h4 itemprop="name">What is compound interest?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Expenses that do not change with sales volume, like rent or salaries.</p>
+                <p itemprop="text">Compound interest is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">What are variable costs?</h4>
+            <h4 itemprop="name">How often can interest be compounded?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">Costs that increase directly with production, like raw materials or shipping.</p>
+                <p itemprop="text">Typically, interest is compounded daily, monthly, quarterly, or annually. Our tool assumes monthly compounding for contributions.</p>
             </div>
         </div>
         <div class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <h4 itemprop="name">How can I lower my break-even point?</h4>
+            <h4 itemprop="name">What's the difference between simple and compound interest?</h4>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">By reducing fixed costs, lowering variable costs, or increasing the selling price.</p>
+                <p itemprop="text">Simple interest is only calculated on the principal amount, while compound interest includes interest on interest.</p>
             </div>
         </div>
                     </div>
@@ -131,7 +142,7 @@
                 <div class="info-section">
                     <h2>Related Tools</h2>
                     <div class="related-tools-grid">
-                        <a href="./profit-margin.html" class="related-tool-card">Profit Margin Calculator</a><a href="./sales-tax.html" class="related-tool-card">Sales Tax / VAT Calculator</a><a href="./hourly-rate.html" class="related-tool-card">Hourly Rate Calculator</a>
+                        <a href="./savings-goal.html" class="related-tool-card">Savings Goal Calculator</a><a href="./retirement.html" class="related-tool-card">Retirement Estimator</a><a href="./inflation.html" class="related-tool-card">Inflation Calculator</a>
                     </div>
                 </div>
             </div>
