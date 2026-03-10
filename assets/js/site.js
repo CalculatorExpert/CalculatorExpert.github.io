@@ -4,8 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
 
+  function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (icon) {
+      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+  }
+
   if (currentTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
+    updateThemeIcon('dark');
+  } else {
+    updateThemeIcon('light');
   }
 
   if (themeToggle) {
@@ -13,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+      updateThemeIcon(theme);
     });
   }
 
