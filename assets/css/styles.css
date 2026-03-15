@@ -88,6 +88,15 @@ a {
     overflow-y: auto;
     z-index: 1000;
     transition: transform 0.4s var(--transition);
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
 }
 
 .sidebar-header {
